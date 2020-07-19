@@ -1,3 +1,10 @@
+## TL; DR.
+
+ITML is a formatting language for making data tables, like in html for example.
+
+The format has a header and a description of the columns at first, then the
+cells are written just after, one per line. Is we have the need os spanning a
+line on multiple lines, we use indentation. These are the specification basics.
 
 ## The Table Header
 
@@ -58,11 +65,27 @@ And this is a cell in the third column.
 
 ## Comments
 
-Comments inside the `itbl` file are added with the character `#`. This can be
-made in empty lines or after text.
+Comments in the `itbl` specification can be added to files by prepending the
+character `#` to the comment.  There are basically two types of comments, which
+are: in empty lines and after text
+
+### Comments in empty lines
+
+```
+This is a line of text representing a cell
+
+  # and this is a comment in an empty line
+And this represents another cell
+```
+
+### Comments after text
+
+```
+This is a line of text representing a cell  # and this is a comment after text
+```
 
 Comment lines and inline comments are removed from the data at preprocessing
-time, so they don't get to the itml processor.
+time, so they don't get to the ITML processor.
 
 ## Formatting rules
 
@@ -110,24 +133,12 @@ As seen above, after the three columns of the first row we add a blank line to
 improve readability of the source. The newline has no syntatic meaning, as we
 are all consenting adults here, but it should be used to improve readability.
 
+### Two spaces before # in inline comments, just after line text
+
 The inline comments in ITML format, this is, the comments made after a line of
 text should have too espaces before the `#` character.
 
-This project aims to develop a simple, concise and robust language for making
-bi-dimensional data tables
-
 [https://github.com.iacchus/iacchus-table-language](https://github.com.iacchus/iacchus-table-language)
 
-## Our proof-of-concept implementation in python
-
-We are currently in pre alpha.
-
-**preprocessor** - parses input data and check for error in language
-
-**procesor** - formats preprocessed data in turns of creating a sanitized
-data base to be used by
-
-**postprocessor** - which transform processed data in other media, like html,
-markdown, unicode etc. Each of these formats should have it's own postprocess,
-depending on with type of output we desire.
-
+* * *
+developed by [iacchus](https://iacchus.github.io) | [github](https://github.com/iacchus/)

@@ -1,12 +1,9 @@
-
 This project aims to develop a simple, concise and robust language for making
 bi-dimensional data tables.
 
-# ITML Language Specification
+# The ITML Language Specification
 
 *(this is pre-alpha and is currently in development)*
-
-## Introduction: Why, and how?
 
 We are trying to follow the steps of simple languages like markdown and toml,
 which simply do their job well done and nothing else.
