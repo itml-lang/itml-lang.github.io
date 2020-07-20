@@ -10,3 +10,5 @@ pandoc --output index.html \
        --metadata title="The Iacchus' Table Markup Language - ITML-Lang" \
        README.md
 
+git add .
+git commit -a -m 'Autocommit from build.sh'

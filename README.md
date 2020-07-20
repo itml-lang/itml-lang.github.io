@@ -3,23 +3,25 @@
 ITML is a formatting language for making data tables, like in html for example.
 
 The format has a header and a description of the columns at first, then the
-cells are written just after, one per line. Is we have the need os spanning a
-line on multiple lines, we use indentation. These are the specification basics.
+cells are written just after, one per line. If we have the need of spanning a
+cell on multiple lines, we use indentation.
+
+These are the specification basics.
 
 ## The Table Header
 
-The first line of the stream contains the string `itbl` and the names of all
-columns of the table, using shell-like escape, like this:
+The first block of the stream (string or file) contains the string `itbl` and
+the names of all columns of the table, using shell-like escape, like this:
 
 ```
 itbl "Column 1" Column\ 2 Column3
 ```
 
-There will be three columns in this description. "Column 1" "Column 2" and
-"Column". The backslash in 'Column 2' is used to escape espaces, so they don't
-get splitted but are partes of the same argument. As seen in 'Column 1', the
-quotation marks also can be used to escape spaces inside a column name, very
-like in a command line shell.
+There will be three columns in this example. "Column 1", "Column 2" and
+"Column3". The backslash in 'Column 2' is used to escape espaces, so they don't
+get splitted but instead are part of the same argument. As seen in 'Column 1',
+the quotation marks also can be used to escape spaces inside a column name,
+in a similar fashion as a POSIX command line shell interprets arguments.
 
 If more space is needed, so to not break the max line width of 79 chars we can
 continue the header after one or more an idented newlines. Like this
@@ -34,8 +36,8 @@ The above signature creates a table with three columns.
 
 ## The Table Body
 
-After the header, each new line with indentation 0 (not indented) will be
-treated as table cell.
+**After the header, each new line with indentation 0 (not indented) will be
+treated as table cell.**
 
 If the line needs to be broken in various lines, the line continuation will be
 syntatically representing by adding indentation to the broken lines, this is,
@@ -131,7 +133,8 @@ And this is the last(3rd) column of the second row.
 
 As seen above, after the three columns of the first row we add a blank line to
 improve readability of the source. The newline has no syntatic meaning, as we
-are all consenting adults here, but it should be used to improve readability.
+are all consenting adults here, but we enphsize this norm so to improve
+readability of the source code.
 
 ### Two spaces before # in inline comments, just after line text
 
@@ -141,4 +144,5 @@ text should have too espaces before the `#` character.
 [https://github.com.iacchus/iacchus-table-language](https://github.com.iacchus/iacchus-table-language)
 
 * * *
+
 developed by [iacchus](https://iacchus.github.io) | [github](https://github.com/iacchus/)
