@@ -102,7 +102,7 @@ Some of these rules we are borrowing from the Python language, which uses
 indentation syntatically as well and have being proven to be good through the
 time and use.
 
-### Max character width
+### Max width of 79 characters per line
 
 The ITBL format lines should have the maximum of 79 characters per line.
 Additional characters should be broken to the next line and indented.
@@ -136,7 +136,7 @@ improve readability of the source. The newline has no syntatic meaning, as we
 are all consenting adults here, but we enphsize this norm so to improve
 readability of the source code.
 
-### Two spaces before # in inline comments, just after line text
+### Two spaces before # in inline comments, just after the line's text
 
 The inline comments in ITML format, this is, the comments made after a line of
 text should have too espaces before the `#` character.

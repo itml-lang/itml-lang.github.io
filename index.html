@@ -20,10 +20,11 @@
 </head>
 <body>
 <p>This project aims to develop a simple, concise and robust language for making bi-dimensional data tables.</p>
+<p>This is the Iacchus’ Table Markup Language</p>
 <h1 id="the-itml-language-specification">The ITML Language Specification</h1>
 <p><em>(this is pre-alpha and is currently in development)</em></p>
 <p>We are trying to follow the steps of simple languages like markdown and toml, which simply do their job well done and nothing else.</p>
-<p>It is a simple and legible language, easy to learn, and writing with it goes in the natural process of writing text in a text editor: no more in drawing tables having to adjust the table columns when more text is added. In ITML you simply state the format and state the cols in the first line, and the each subsequent line or lines, if we use indentation in an entry, or paragraphs if we use space between indented text of the same cell, will be the contents of a table cell.</p>
+<p>The ITML language is a simple and legible language, easy to learn, and writing with it goes in the natural process of writing text in a text editor: no more in drawing tables having to adjust the table columns when more text is added. In ITML you simply state the format and state the cols in the first block of text, and each subsequent line (or lines if we use indentation in an entry), or paragraphs (if we use space between indented text of the same cell), will be the contents of a table cell.</p>
 <header id="title-block-header">
 <h1 class="title">The Iacchus' Table Markup Language - ITML-Lang</h1>
 </header>
@@ -39,10 +40,10 @@
 </ul></li>
 <li><a href="#formatting-rules">Formatting rules</a>
 <ul>
-<li><a href="#max-character-width">Max character width</a></li>
+<li><a href="#max-width-of-79-characters-per-line">Max width of 79 characters per line</a></li>
 <li><a href="#spaces-indentation-without-tabs">4 spaces indentation without tabs</a></li>
 <li><a href="#empty-line-after-n-columns-cells">Empty line after n-columns cells</a></li>
-<li><a href="#two-spaces-before-in-inline-comments-just-after-line-text">Two spaces before # in inline comments, just after line text</a></li>
+<li><a href="#two-spaces-before-in-inline-comments-just-after-the-lines-text">Two spaces before # in inline comments, just after the line’s text</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -93,7 +94,7 @@ And this represents another cell</code></pre>
 <p>One of the caracteristics which we have in mind as we develop the ITML-lang is readability from the very <code>itbl</code> source.</p>
 <p>SO, we will try to attain to best practices in writing the source so that we respect some rules, even these rules not being enforced by the ITML specification.</p>
 <p>Some of these rules we are borrowing from the Python language, which uses indentation syntatically as well and have being proven to be good through the time and use.</p>
-<h3 id="max-character-width">Max character width</h3>
+<h3 id="max-width-of-79-characters-per-line">Max width of 79 characters per line</h3>
 <p>The ITBL format lines should have the maximum of 79 characters per line. Additional characters should be broken to the next line and indented.</p>
 <h3 id="spaces-indentation-without-tabs">4 spaces indentation without tabs</h3>
 <p>The ITBL format indentation should not use TAB, and should be indented with 2 or 4 spaces, concisely. After pre-alpha we will see which case is better and change this documentation with the urging to use 2 or 4 spaces, which be better.</p>
@@ -109,7 +110,7 @@ After the newline, this is the first column of the second row.
 And this is the second column of the second row.
 And this is the last(3rd) column of the second row.</code></pre>
 <p>As seen above, after the three columns of the first row we add a blank line to improve readability of the source. The newline has no syntatic meaning, as we are all consenting adults here, but we enphsize this norm so to improve readability of the source code.</p>
-<h3 id="two-spaces-before-in-inline-comments-just-after-line-text">Two spaces before # in inline comments, just after line text</h3>
+<h3 id="two-spaces-before-in-inline-comments-just-after-the-lines-text">Two spaces before # in inline comments, just after the line’s text</h3>
 <p>The inline comments in ITML format, this is, the comments made after a line of text should have too espaces before the <code>#</code> character.</p>
 <p><a href="https://github.com.iacchus/iacchus-table-language">https://github.com.iacchus/iacchus-table-language</a></p>
 <hr />
