@@ -11,4 +11,5 @@ pandoc --output index.html \
        README.md
 
 git add .
-git commit -a -m 'Autocommit from build.sh'
+git commit -a -m 'Autocommit from build.sh' || true
+git push

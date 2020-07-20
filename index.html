@@ -48,18 +48,19 @@
 </nav>
 <h2 id="tl-dr.">TL; DR.</h2>
 <p>ITML is a formatting language for making data tables, like in html for example.</p>
-<p>The format has a header and a description of the columns at first, then the cells are written just after, one per line. Is we have the need os spanning a line on multiple lines, we use indentation. These are the specification basics.</p>
+<p>The format has a header and a description of the columns at first, then the cells are written just after, one per line. If we have the need of spanning a cell on multiple lines, we use indentation.</p>
+<p>These are the specification basics.</p>
 <h2 id="the-table-header">The Table Header</h2>
-<p>The first line of the stream contains the string <code>itbl</code> and the names of all columns of the table, using shell-like escape, like this:</p>
+<p>The first block of the stream (string or file) contains the string <code>itbl</code> and the names of all columns of the table, using shell-like escape, like this:</p>
 <pre><code>itbl &quot;Column 1&quot; Column\ 2 Column3</code></pre>
-<p>There will be three columns in this description. “Column 1” “Column 2” and “Column”. The backslash in ‘Column 2’ is used to escape espaces, so they don’t get splitted but are partes of the same argument. As seen in ‘Column 1’, the quotation marks also can be used to escape spaces inside a column name, very like in a command line shell.</p>
+<p>There will be three columns in this example. “Column 1”, “Column 2” and “Column3”. The backslash in ‘Column 2’ is used to escape espaces, so they don’t get splitted but instead are part of the same argument. As seen in ‘Column 1’, the quotation marks also can be used to escape spaces inside a column name, in a similar fashion as a POSIX command line shell interprets arguments.</p>
 <p>If more space is needed, so to not break the max line width of 79 chars we can continue the header after one or more an idented newlines. Like this</p>
 <pre><code>itbl &quot;This is the name of the first column&quot; &quot;This is the name of the third
     column&quot; &quot;And this indented line let us span our table heading definition
     for as much lines as we need&quot;</code></pre>
 <p>The above signature creates a table with three columns.</p>
 <h2 id="the-table-body">The Table Body</h2>
-<p>After the header, each new line with indentation 0 (not indented) will be treated as table cell.</p>
+<p><strong>After the header, each new line with indentation 0 (not indented) will be treated as table cell.</strong></p>
 <p>If the line needs to be broken in various lines, the line continuation will be syntatically representing by adding indentation to the broken lines, this is, by adding spaces before the characters in the new broken lines. The amount of spaces if not actually enforced, but it is enforced that multiple indented lines have the same amount of spaces than the indented line before. Example:</p>
 <pre><code>itbl COLUMN1 COLUMN2 COLUMN3  # then we have 3 columns
 
@@ -107,7 +108,7 @@ This text is the third column.
 After the newline, this is the first column of the second row.
 And this is the second column of the second row.
 And this is the last(3rd) column of the second row.</code></pre>
-<p>As seen above, after the three columns of the first row we add a blank line to improve readability of the source. The newline has no syntatic meaning, as we are all consenting adults here, but it should be used to improve readability.</p>
+<p>As seen above, after the three columns of the first row we add a blank line to improve readability of the source. The newline has no syntatic meaning, as we are all consenting adults here, but we enphsize this norm so to improve readability of the source code.</p>
 <h3 id="two-spaces-before-in-inline-comments-just-after-line-text">Two spaces before # in inline comments, just after line text</h3>
 <p>The inline comments in ITML format, this is, the comments made after a line of text should have too espaces before the <code>#</code> character.</p>
 <p><a href="https://github.com.iacchus/iacchus-table-language">https://github.com.iacchus/iacchus-table-language</a></p>
